@@ -119,11 +119,11 @@
 
  <distributionManagement>
   <repository>
-    <id>maven-releases</id>
+    <id>Maven-to-nexus</id>
     <url>http://172.28.112.1:8082/repository/maven-releases/</url>
   </repository>
   <snapshotRepository>
-    <id>maven-snapshots</id>
+    <id>Maven-to-nexus</id>
     <url>http://172.28.112.1:8082/repository/maven-snapshots/</url>
   </snapshotRepository>
 </distributionManagement>
