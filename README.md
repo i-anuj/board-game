@@ -51,3 +51,6 @@ This web application displays lists of board games and their reviews. While anyo
   - username: bugs    |     password: bunny (user role)
   - username: daffy   |     password: duck  (manager role)
 5. You can also sign-up as a new user and customize your role to play with the application! 😊
+
+<img width="826" height="230" alt="image" src="https://github.com/user-attachments/assets/60cbd397-a6e0-4a12-afa3-302a434dccc7" />
+
