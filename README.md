@@ -54,3 +54,6 @@ This web application displays lists of board games and their reviews. While anyo
 
 <img width="826" height="230" alt="image" src="https://github.com/user-attachments/assets/60cbd397-a6e0-4a12-afa3-302a434dccc7" />
 
+<img width="1904" height="559" alt="image" src="https://github.com/user-attachments/assets/1556999e-7be8-48b6-b188-84c50859c79e" />
+
+
