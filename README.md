@@ -52,8 +52,12 @@ This web application displays lists of board games and their reviews. While anyo
   - username: daffy   |     password: duck  (manager role)
 5. You can also sign-up as a new user and customize your role to play with the application! 😊
 
+Initial credentials passwrod:
 <img width="826" height="230" alt="image" src="https://github.com/user-attachments/assets/60cbd397-a6e0-4a12-afa3-302a434dccc7" />
-
+Releases(disbale deploy):
 <img width="1904" height="559" alt="image" src="https://github.com/user-attachments/assets/1556999e-7be8-48b6-b188-84c50859c79e" />
+Snapshot (allow redploy) :
+<img width="1907" height="679" alt="image" src="https://github.com/user-attachments/assets/86db76f1-ffe6-4eed-a28d-052870b8944c" />
+
 
 
