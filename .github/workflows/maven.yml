@@ -102,11 +102,20 @@ jobs:
     - name: Copy JAR to root for Docker build
       run: cp ./app/*.jar ./app.jar
 
-    - name: Build Docker image
-      run: docker build -t hacked01/boardgame:latest .
+    - name: Build and push Docker image
+      run: |
+        IMAGE_NAME=hacked01/boardgame
+        IMAGE_TAG=${GITHUB_SHA::7}  # Use first 7 chars of commit SHA
+        docker build -t $IMAGE_NAME:$IMAGE_TAG .
+        docker push $IMAGE_NAME:$IMAGE_TAG
+        # Save image tag to a file for next workflow
+        echo "$IMAGE_TAG" > docker-image.txt
 
-    - name: Push Docker image
-      run: docker push hacked01/boardgame:latest
+    - name: Upload image tag artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: docker-image-tag
+        path: docker-image.txt
 
     - name: List running containers
       run: docker ps
