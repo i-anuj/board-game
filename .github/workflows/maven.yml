@@ -108,14 +108,14 @@ jobs:
         IMAGE_TAG=${GITHUB_SHA::7}  # Use first 7 chars of commit SHA
         docker build -t $IMAGE_NAME:$IMAGE_TAG .
         docker push $IMAGE_NAME:$IMAGE_TAG
-       
+        echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
 
-    - name: Update deployment.yaml image
+    - name: Update deployment-service.yaml image
       run: |
        IMAGE_NAME=hacked01/boardgame
        DEPLOYMENT_FILE=deployment-service.yaml
        sed -i "s|image: .*|image: $IMAGE_NAME:$IMAGE_TAG|g" $DEPLOYMENT_FILE
-       echo "Updated deployment.yaml:"
+       echo "Updated deployment-service.yaml:"
        cat $DEPLOYMENT_FILE
 
     - name: Commit and push updated deployment.yaml
