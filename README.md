@@ -60,4 +60,19 @@ Snapshot (allow redploy) :
 <img width="1907" height="679" alt="image" src="https://github.com/user-attachments/assets/86db76f1-ffe6-4eed-a28d-052870b8944c" />
 
 
+For Github-action
+Final application-
+<img width="1904" height="945" alt="image" src="https://github.com/user-attachments/assets/321405ab-1119-46ee-bbad-b32167e7d45d" />
+
+Buidl in github-action
+<img width="1916" height="903" alt="image" src="https://github.com/user-attachments/assets/5eeae0ac-79ea-43a1-b0cb-6ef98e267c9f" />
+
+Argocd-
+<img width="1918" height="926" alt="image" src="https://github.com/user-attachments/assets/1690b065-4015-4005-9226-dd84f904254c" />
+
+H2-db
+<img width="1096" height="590" alt="image" src="https://github.com/user-attachments/assets/23529610-2d06-469d-88dd-b011d288a2f4" />
+
+
+
 
