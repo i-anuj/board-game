@@ -2,8 +2,25 @@
 
 ## Description 
 
-**Board Game Database Full-Stack Web Application.**
-This web application displays lists of board games and their reviews. While anyone can view the board game lists and reviews, they are required to log in to add/ edit the board games and their reviews. The 'users' have the authority to add board games to the list and add reviews, and the 'managers' have the authority to edit/ delete the reviews on top of the authorities of users.  
+## CI/CD and DevOps
+
+This project is fully integrated with modern CI/CD pipelines and deployment practices:
+
+### 1. Jenkins + Nexus
+- Jenkins is used for **building the Java Maven project** and running **unit tests**.
+- Maven artifacts (JARs) are pushed to **Nexus Repository Manager** for artifact storage.
+- Automates versioning and artifact management for production-ready builds.
+
+### 2. GitHub Actions + ArgoCD
+- GitHub Actions automates:
+  - Maven build and packaging
+  - Security scans (Trivy, Gitleaks)
+  - Docker image build and push
+  - Deployment artifact updates
+- **ArgoCD** continuously deploys the Dockerized application to **Kubernetes clusters**, ensuring:
+  - GitOps-driven deployment
+  - Continuous delivery with automated rollbacks
+  - Synchronization of cluster state with Git repository
 
 ## Architecture
 - **Frontend:** Thymeleaf templates with Bootstrap CSS
