@@ -108,8 +108,7 @@ jobs:
         IMAGE_TAG=${GITHUB_SHA::7}  # Use first 7 chars of commit SHA
         docker build -t $IMAGE_NAME:$IMAGE_TAG .
         docker push $IMAGE_NAME:$IMAGE_TAG
-        # Save image tag to a file for next workflow
-        echo "$IMAGE_TAG" > docker-image.txt
+       
 
     - name: Update deployment.yaml image
       run: |
@@ -125,9 +124,7 @@ jobs:
        git config user.email "github-actions@github.com"
        git add deployment-service.yaml
        git commit -m "Update deployment image to $IMAGE_TAG"
-       git push
-       env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       git push https://x-access-token:${GITHUB_TOKEN}@github.com/i-anuj/board-game.git HEAD:main
 
     - name: List running containers
       run: docker ps
