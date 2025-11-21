@@ -1,27 +1,26 @@
 pipeline {
     agent any
-    
-    tools {
-        jdk 'jdk17'
-        maven 'maven3'
+    tools{
+        jdk "jdk17"
+        maven "maven3"
     }
+    stages {
+        stage('Git checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/i-anuj/board-game.git'
+            }
+        }
+        stage('compile') {
+            steps {
+                sh "mvn compile"
+            }
+        }
+        stage('Build and deploy') {
+            steps {
+                withMaven(globalMavenSettingsConfig: 'Maven-to-nexus', jdk: 'jdk17', maven: 'maven3', traceability: true) {
+                    sh "mvn deploy"
     
-    stages {   
-        stage('Compile') {
-            steps {
-            sh 'mvn compile'
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-        
-        stage('Build') {
-            steps {
-                sh 'mvn package'
+                 }
             }
         }
     }
