@@ -112,7 +112,7 @@ jobs:
         echo "$IMAGE_TAG" > docker-image.txt
 
     - name: Upload image tag artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: docker-image-tag
         path: docker-image.txt
