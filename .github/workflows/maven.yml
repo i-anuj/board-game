@@ -72,25 +72,7 @@ jobs:
         with:
           name: boardgame-jar
           path: ./app
-      - name: Deploy to Nexus
-        run: mvn deploy -B
-        env:
-         NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-         NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-      - name: Verify Nexus Artifact
-        run: |
-         ARTIFACT_URL="https://nexus.example.com/repository/maven-releases/com/example/my-app/1.0.0/my-app-1.0.0.jar"
-         HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -u $NEXUS_USERNAME:$NEXUS_PASSWORD $ARTIFACT_URL)
-         if [ "$HTTP_CODE" -ne 200 ]; then
-          echo "Artifact not found in Nexus!"
-          exit 1
-         else
-          echo "Artifact successfully uploaded to Nexus!"
-         fi
-        env:
-          NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-          NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-    
+     
   
   builddeploy:
 
